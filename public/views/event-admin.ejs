@@ -1,0 +1,92 @@
+<!DOCTYPE>
+<html>
+<title>Admin</title>
+ <link rel="stylesheet" type="text/css" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css"> 
+ <link href="/css/bootstrap4.min.css" rel="stylesheet"> 
+<link href="/css/font-awesome.min.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="/css/event-admin.css">
+
+<head>
+</head>
+
+<body>
+  <div class="jumbotron jumbotron-fluid" style="height: 100px">
+    <h1 class="text-primary text-center">Event Admin</h1>
+  </div>
+  <div class="text-primary text-center">
+      <select class="custom-select" name="getcollege" id="mySelect">
+        <option value="addnew">Add New</option>
+      </select>
+      <button class="btn btn-primary" id='get-data'>Get Data</button>
+  </div>
+  <div id='add-new-text' class="text-center invisible" style="margin: 10px">
+    Enter the ID an Name of College Below and Fill All Events in Table
+  </div>
+  <div class="row college-details">
+    <div class="col-md-3 offset-md-3">
+      <div class="form-group">
+        <label for='college_selected'>College ID</label>
+        <input class="form-control" type="text" id='college_selected'>
+      </div>  
+    </div>
+    <div class="col-md-3">
+      <div class="form-group">
+        <label for='college_name_selected'>College Name</label>
+        <input class="form-control" type="text" id='college_name_selected'>
+      </div>  
+    </div>
+  </div>
+  <div class="container">
+    <div id="table" class="table-editable">  
+      <div>
+        <span class="table-add fa fa-plus"></span>
+      </div>
+      <div>
+        <table class="table">
+          <tr class="header">
+            <th>URL</th>
+            <th>Start</th>
+            <th>End</th>
+            <th>Title</th>
+            <th>Class</th>
+            <th></th>
+            <!-- <th></th> -->
+          </tr>
+          <!-- This is our clonable table line -->
+          <tr class="invisible">
+            <td contenteditable="true">URL</td>
+            <td contenteditable="true">YYYY-MM-DD HH:MM:SS</td>
+            <td contenteditable="true">YYYY-MM-DD HH:MM:SS</td>
+            <td contenteditable="true">Lorem Ispum</td>
+            <td contenteditable="true">event-info </td>
+            <td>
+              <span class="table-remove fa fa-times"></span>
+            </td>
+            <!-- <td>
+              <span class="table-up fa fa-arrow-up"></span>
+              <span class="table-down fa fa-arrow-down"></span>
+            </td> -->
+          </tr>
+        </table>
+      </div>
+  </div>
+
+  <div class="row export">
+    <div class="col-sm-12">
+      <button id="export-btn" class="btn btn-primary">Export Data</button>
+      <p id="export"></p> 
+    </div>
+  </div>
+  
+</div>
+
+<script src="../js/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+<script src="event-admin/index.js"></script>
+
+</body>
+</html>

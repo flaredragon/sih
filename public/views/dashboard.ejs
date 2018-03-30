@@ -1,0 +1,280 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+
+    <title>
+      
+        Home &middot; 
+      
+    </title>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600' rel='stylesheet' type='text/css'>
+    <link href="css/toolkit.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/application.css" rel="stylesheet">
+
+    <style>
+      /* note: this is a hack for ios iframe for bootstrap themes shopify page */
+      /* this chunk of css is not part of the toolkit :) */
+      body {
+        width: 1px;
+        min-width: 100%;
+        *width: 100%;
+      }
+    </style>
+
+  </head>
+
+
+<body class="with-top-navbar">
+  
+
+
+<div class="growl" id="app-growl"></div>
+
+<nav class="navbar navbar-inverse navbar-fixed-top app-navbar">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-main">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">
+        <img src="images/dashboard/IOSD-logo.png" alt="brand">
+      </a>
+    </div>
+    <div class="navbar-collapse collapse" id="navbar-collapse-main">
+
+        <ul class="nav navbar-nav hidden-xs">
+          <li class="active">
+            <a href="#">Dashboard</a>
+          </li>
+          <li>
+            <a href="/library">Library</a>
+          </li>
+          <li>
+            <a href="/events">Events</a>
+          </li>
+          <li>
+            <a href="single.html">Blogs</a>
+          </li>
+          <li>
+            <a href="#">Video Tutorials</a>
+          </li>
+        </ul>
+
+        <ul class="nav navbar-nav navbar-right m-r-0 hidden-xs">
+          <!-- <li >
+            <a class="app-notifications" href="notifications/index.html">
+              <span class="icon icon-bell"></span>
+            </a>
+          </li> -->
+          <li>
+            <button class="btn btn-default navbar-btn navbar-btn-avitar" data-toggle="popover">
+              <img class="img-circle" src="<%=user.picture%>">
+            </button>
+          </li>
+        </ul>
+        
+        <ul class="nav navbar-nav hidden-sm hidden-md hidden-lg">
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="/library">Library</a></li>
+          <li><a href="/events">Events</a></li>
+          <li><a href="single.html">Blog</a></li>
+          <li><a href="#" data-action="growl">Video Tutorials</a></li>
+          <li><a href="login">Logout</a></li>
+        </ul>
+
+        <ul class="nav navbar-nav hidden">
+          <li><a href="login">Logout</a></li>
+        </ul>
+      </div>
+  </div>
+</nav>
+
+
+<div class="container p-t-md">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="panel panel-default panel-profile m-b-md">
+        <div class="panel-body text-center">
+          <a href="dashboard">
+            <img
+              class="panel-profile-img"
+              src="<%=user.picture%>">
+          </a>
+
+          <h5 class="panel-title">
+            <a class="text-inherit"><%=user.name%></a>
+          </h5>
+
+          <p class="m-b-md"><%=user.college%></p>
+
+          <ul class="panel-menu">
+            <li class="panel-menu-item">
+              <a href="#userModal" class="text-inherit" >
+                Member            
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="panel panel-default visible-md-block visible-lg-block">
+        <div class="panel-body">
+          <h5 class="m-t-0">About <small>· <a href="#"></a></small></h5>
+          <ul class="list-unstyled list-spaced">
+              <li><i class="fa fa-university" aria-hidden="true"></i>&ensp;Went to <a href="#"><%=user.college%></a></li>
+              <li><i class="fa fa-calendar" aria-hidden="true"></i></span>&ensp;Member Since <%=user.joinDate%></li>
+              <!-- <li><span class="text-muted icon icon-github m-r"></span>&ensp;<a href="#"><%=user.picture%></a></li> -->
+              <li><i class="fa fa-twitter" aria-hidden="true"></i>&emsp;<a href="#"><%=user.twitter%></a></li>
+              <li><i class="fa fa-facebook" aria-hidden="true"></i>&emsp;<a href="#"><%=user.facebook%></a></li>
+              <li><i class="fa fa-linkedin" aria-hidden="true"></i>&emsp;<a href="#"><%=user.linkedin%></a></li>      
+              <!-- <li><span class="text-muted icon icon-home m-r"></span>&ensp;Lives in <a href="#">New Delhi</a></li> -->
+          </ul>
+        </div>
+      </div>
+
+       
+    </div>
+
+    <div class="col-md-6">
+      <ul class="list-group media-list media-list-stream">
+
+        <li class="media list-group-item p-a">
+          <a id='dwnldmembercard' class="btn btn-primary-outline btn-sm">Download Membership Card</a>
+        </li>
+
+        <li class="media list-group-item p-a">
+          <div class="container" style="width:auto">
+            <img class='img-responsive' src='<%=idcard%>'></img>
+          </div>
+        </li>
+
+        
+        <!-- <li class="media list-group-item p-a">
+          <a class="media-left" href="#">
+            <img
+              class="media-object img-circle"
+              src="assets/img/avatar-fat.jpg">
+          </a>
+          <div class="media-body">
+            <div class="media-body-text">
+              <div class="media-heading">
+                <small class="pull-right text-muted">12 min</small>
+                <h5>node png.js</h5>
+              </div>
+              <p>
+                Donec id elit non mi porta gravida at eget metus. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+        </li> -->
+
+        
+      </ul>
+    </div>
+    <div class="col-md-3 a">
+      <div class="alert alert-warning alert-dismissible hidden-xs" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <a class="alert-link">Welcome to IOSD!</a> You've got the Knack to Hack.
+      </div>
+
+        <div class="panel panel-default visible-md-block visible-lg-block">
+        <div class="panel-body">
+          <h5 class="m-t-0">IOSD SOCIAL</h5>
+          <div data-grid="images" data-target-height="150">
+            <div>
+              <a href="https://www.facebook.com/iosddtu/"><img data-width="100" data-height="100" src="images/dashboard/fb-art.png"></a>
+            </div>
+
+            <div>
+                <a href="https://twitter.com/iosoftwared"><img data-width="100" data-height="100" src="images/dashboard/twitter-icon--basic-round-social-iconset--s-icons-0.png"></a>
+            </div>
+
+            <div>
+                <a href="https://github.com/IOSD"><img data-width="100" data-height="100" src="images/dashboard/github.svg"></a>
+            </div>
+
+           <div>
+                <a href="https://in.linkedin.com/company/iosd"><img data-width="100" data-height="100" src="images/dashboard/linkedin.png"></a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="panel panel-default m-b-md hidden-xs">
+        <div class="panel-body">
+          <h5 class="m-t-0">Events</h5>
+          <div data-grid="images" data-target-height="150">
+            <img class="media-object" data-width="640" data-height="640" data-action="zoom" src="images/dashboard/hackdtu.jpg">
+          </div>
+          <p><strong>HACKDTU 2.0</strong></p>
+          <a href="http://www.hackdtu.tech"class="btn btn-primary-outline btn-sm">Register Now!</a>
+        </div>
+      </div>
+
+      <div class="panel panel-default m-b-md hidden-xs">
+        <div class="panel-body">
+        <h5 class="m-t-0">Mentors <small>· <a href="#">View All</a></small></h5>
+        <ul class="media-list media-list-stream">
+          <li class="media m-b">
+            <a class="media-left" href="#">
+              <img
+                class="media-object img-circle"
+                src="images/dashboard/krishnarai.jpg">
+            </a>
+            <div class="media-body">
+              <strong>Krishna Rai</strong>&ensp;@RAI.KRISHNA
+              <div class="media-body-actions">
+                <a class="btn btn-primary-outline btn-sm" href="https://www.facebook.com/RAI.KRISHNA">
+                  <span class="icon icon-phone"></span>Contact</a>
+              </div>
+            </div>
+          </li>
+           <li class="media">
+            <a class="media-left" href="#">
+              <img
+                class="media-object img-circle"
+                src="images/dashboard/nikhilpandey.jpg">
+            </a>
+            <div class="media-body">
+              <strong>Nikhil Pandey</strong>&ensp;@menikhilpandey
+              <div class="media-body-actions">
+                <a class="btn btn-primary-outline btn-sm" href="https://www.facebook.com/menikhilpandey">
+                  <span class="icon icon-phone"></span>Conact</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+        </div>
+     </div>
+        
+
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/chart.js"></script>
+    <script src="js/toolkit.js"></script>
+    <script src="js/application.js"></script>
+    <script>
+      // execute/clear BS loaders for docs
+      $(function(){
+        if (window.BS&&window.BS.loader&&window.BS.loader.length) {
+          while(BS.loader.length){(BS.loader.pop())()}
+        }
+      })
+    </script>
+  </body>
+</html>
+
